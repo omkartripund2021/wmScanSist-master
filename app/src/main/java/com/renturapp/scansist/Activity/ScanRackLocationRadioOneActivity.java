@@ -226,13 +226,13 @@ public class ScanRackLocationRadioOneActivity extends Activity implements
 
         int rackID = intent.getIntExtra("rackID", -1);
 
-        if (rackID != -1) {
+        if (rackID != -1 && rackID != 0) {
             String rackDescription = intent.getStringExtra("rackDescription");
             ((TextView) findViewById(R.id.lblScanRack)).setText(rackDescription);
 
         } else {
             rackID = sharedPref.getInt("rackID", 0);
-            ((TextView) findViewById(R.id.lblScanRack)).setText("Rack: " + rackID);
+            ((TextView) findViewById(R.id.lblScanRack)).setText("Scan RackList");
         }
         mRack = String.format(Locale.UK, "%02d", rackID);
 
